@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,32 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".ColorPickerActivity">
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/tvColorp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="Color palette"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tvColorp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Color palette"
-                android:textSize="40dp"
-                android:textAlignment="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:background="@color/black"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"/>
             <FrameLayout
                 android:layout_width="340dp"
-                android:layout_height="460dp"
+                android:layout_height="500dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="40dp">
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -48,9 +40,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/h1"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:backgroundTint="#33000000"
+                        app:cardBackgroundColor="#33000000"
                         android:layout_marginTop="50dp">
                         <TextView
                             android:layout_width="wrap_content"
@@ -61,9 +54,10 @@
 
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/h2"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:backgroundTint="#800000FF"
+                        app:cardBackgroundColor="#800000FF"
                         android:layout_marginTop="50dp">
                         <TextView
                             android:layout_width="wrap_content"
@@ -74,9 +68,10 @@
 
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/h3"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:backgroundTint="#CC008000"
+                        app:cardBackgroundColor="#CC008000"
                         android:layout_marginTop="50dp">
                         <TextView
                             android:layout_width="wrap_content"
@@ -93,7 +88,6 @@
 
 
 
-        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/abChangeColor"
@@ -104,7 +98,5 @@
             android:layout_marginBottom="40dp"
             android:background="@color/greenYellow"/>
 
-    </FrameLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

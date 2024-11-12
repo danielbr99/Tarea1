@@ -14,7 +14,9 @@ class ColorViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var color = Color.parseColor(cardColor.color)
         var name = cardColor.name
         cvVertColor.setCardBackgroundColor(color)
+        cvVertColor.setTag(cardColor.name)
         tvVertColor.setText(name)
+
 
     }
 }

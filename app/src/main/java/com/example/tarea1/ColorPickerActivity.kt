@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,9 +58,9 @@ class ColorPickerActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_color)
-        val btnChangeColor : Button = findViewById(R.id.btnChangeColor)
-        val rgBars : RadioGroup = findViewById(R.id.rgBars)
-        val rgColors : RadioGroup = findViewById(R.id.rgColors)
+        val btnChangeColor : Button = dialog.findViewById(R.id.btnChangeColor)
+        val rgBars : RadioGroup = dialog.findViewById(R.id.rgBars)
+        val rgColors : RadioGroup = dialog.findViewById(R.id.rgColors)
 
         btnChangeColor.setOnClickListener{
             var selectedIdB = rgBars.checkedRadioButtonId
@@ -67,17 +68,27 @@ class ColorPickerActivity : AppCompatActivity() {
             var selectedIdC = rgColors.checkedRadioButtonId
             val selectedRadioButtonC: RadioButton = rgColors.findViewById(selectedIdC)
 
-            updateBar(selectedRadioButtonB.text.toString(),selectedRadioButtonC.text.toString());
+            updateBar(selectedRadioButtonB,selectedRadioButtonC, dialog);
             dialog.hide()
         }
 
         dialog.show()
     }
 
-    private fun updateBar( bar : String,  color : String){
+    private fun updateBar( bar : RadioButton,  color : RadioButton, dialog: Dialog){
+        val parent = findViewById<RecyclerView>(R.id.rvColorCards)
 
-        when (bar){
+        when(bar.tag){
+            "H1(20%)" -> findViewById<CardView>(R.id.h1).setCardBackgroundColor(Color.parseColor("#33"+ color.tag))
+            "H2(50%)" -> findViewById<CardView>(R.id.h2).setCardBackgroundColor(Color.parseColor("#80"+ color.tag))
+            "H3(80%)" -> findViewById<CardView>(R.id.h3).setCardBackgroundColor(Color.parseColor("#CC"+ color.tag))
+            "V1(20%)" -> parent.findViewWithTag<CardView>(bar.tag).setCardBackgroundColor(Color.parseColor("#33"+ color.tag))
+            "V2(35%)" -> parent.findViewWithTag<CardView>(bar.tag).setCardBackgroundColor(Color.parseColor("#59"+ color.tag))
+            "V3(50%)" -> parent.findViewWithTag<CardView>(bar.tag).setCardBackgroundColor(Color.parseColor("#80"+ color.tag))
+            "V4(65%)" -> parent.findViewWithTag<CardView>(bar.tag).setCardBackgroundColor(Color.parseColor("#A6"+ color.tag))
+            "V5(80%)" -> parent.findViewWithTag<CardView>(bar.tag).setCardBackgroundColor(Color.parseColor("#CC"+ color.tag))
 
+            else -> dialog.hide()
         }
 
     }

@@ -1,3 +1,3 @@
 package com.example.tarea1
 
-data class Card(val name: String, val color: String)
+data class Card(var name: String, var color: String)

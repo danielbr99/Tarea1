@@ -23,10 +23,10 @@ class ColorPickerActivity : AppCompatActivity() {
 
     private val colors = listOf(
         Card("V1(20%)", "#33000000"),
-        Card("V2(35%)", "#59000000"),
+        Card("V2(35%)", "#590000FF"),
         Card("V3(50%)", "#8020B2AA"),
-        Card("V4(65%)", "#A60000CD"),
-        Card("V5(80%)", "#CC00FF00"),
+        Card("V4(65%)", "#A60000FF"),
+        Card("V5(80%)", "#CC2F4F4F"),
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

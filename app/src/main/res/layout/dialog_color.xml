@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="250dp"
+    android:layout_width="280dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gray"
@@ -13,11 +13,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+
             android:layout_weight="1">
 
             <TextView
@@ -28,7 +30,9 @@
                 android:hint="Pick a bar"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:textSize="17dp"
                 android:textColor="@color/white"
+                android:gravity="center|start"
                 android:textColorHint="@color/white" />
             <RadioGroup
                 android:id="@+id/rgBars"
@@ -117,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:gravity="end"
             android:layout_weight="1">
             <TextView
                 android:id="@+id/tvColors"
@@ -126,6 +131,8 @@
                 android:hint="Pick a color"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:textSize="17dp"
+                android:gravity="center|start"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
             <RadioGroup
@@ -224,13 +231,20 @@
         </LinearLayout>
 
     </LinearLayout>
-    <Button
-        android:id="@+id/btnChangeColor"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChangeColor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="Apply"
-        android:textColor="@color/black" />
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:text="Apply"/>
+
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
 

@@ -59,11 +59,11 @@ class ColorPickerActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_color)
-        val btnChangeColor: Button = dialog.findViewById(R.id.btnChangeColor)
+        val cvChangeColor: CardView = dialog.findViewById(R.id.cvChangeColor)
         val rgBars: RadioGroup = dialog.findViewById(R.id.rgBars)
         val rgColors: RadioGroup = dialog.findViewById(R.id.rgColors)
 
-        btnChangeColor.setOnClickListener {
+        cvChangeColor.setOnClickListener {
             var selectedIdB = rgBars.checkedRadioButtonId
             val selectedRadioButtonB: RadioButton = rgBars.findViewById(selectedIdB)
             var selectedIdC = rgColors.checkedRadioButtonId
